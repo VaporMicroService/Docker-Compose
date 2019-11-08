@@ -4,29 +4,19 @@ services:
 
   #API Gateway
   api-gateway:
-    build:
-      context: https://github.com/VaporMicroService/Gateway/tree/0.0.1
-      dockerfile: docker.Dockerfile 
-      args:
-        env: release
-        port: 80
+    image: shial/api-gateway:0.0.1
     restart: always
     ports:
-      - 3001:80
+      - 5000:80
     environment:
-      AUTH: http://user-service:81/users/id
-      HOST:users: "{\"host\":\"http://user-service:81/\",\"loginRequired\":false}"
+      AUTH: http://user-service:80/users/id
+      HOST:users: "{\"host\":\"http://user-service:80/\",\"loginRequired\":false}"
 
   #User Service
   user-service:
-    build:
-      context: https://github.com/VaporMicroService/UserService/tree/0.0.1
-      dockerfile: docker.Dockerfile 
-      args:
-        env: release
-        port: 81
+    image: shial/user-service:0.0.1
     restart: always
     environment:
-      PSQL_DATABASE_URL: ${USER_SERVICE_DB_URL}
+      PSQL_DATABASE_URL: ${PSQL_DATABASE_URL}
       FACEBOOK_APP_SECRET: ${FACEBOOK_APP_SECRET}
       FACEBOOK_APP_ID: ${FACEBOOK_APP_ID}
