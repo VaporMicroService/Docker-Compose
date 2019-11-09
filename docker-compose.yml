@@ -7,7 +7,7 @@ services:
     image: shial/api-gateway:0.0.4
     restart: unless-stopped
     ports:
-      - 5000:80
+      - 80:80
     environment:
       AUTH: http://user-service:81/users/id
       HOST:users: "{\"host\":\"http://user-service:81/\",\"loginRequired\":false}"
