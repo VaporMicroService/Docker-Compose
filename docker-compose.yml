@@ -4,18 +4,18 @@ services:
 
   #API Gateway
   api-gateway:
-    image: shial/api-gateway:0.0.1
-    restart: always
+    image: shial/api-gateway:0.0.3
+    restart: unless-stopped
     ports:
       - 5000:80
     environment:
-      AUTH: http://user-service:80/users/id
-      HOST:users: "{\"host\":\"http://user-service:80/\",\"loginRequired\":false}"
+      AUTH: http://user-service:81/users/id
+      HOST:users: "{\"host\":\"http://user-service:81/\",\"loginRequired\":false}"
 
   #User Service
   user-service:
-    image: shial/user-service:0.0.1
-    restart: always
+    image: shial/user-service:0.0.3
+    restart: unless-stopped
     environment:
       PSQL_DATABASE_URL: ${PSQL_DATABASE_URL}
       FACEBOOK_APP_SECRET: ${FACEBOOK_APP_SECRET}
