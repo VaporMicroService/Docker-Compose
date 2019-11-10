@@ -9,8 +9,8 @@ services:
     ports:
       - 80:80
     environment:
-      AUTH: user-service:81/users/id
-      HOST_users: "{\"host\":\"user-service:81/\",\"loginRequired\":false}"
+      AUTH: http://user-service:81/users/id
+      HOST_users: "{\"host\":\"http://user-service:81/\",\"loginRequired\":false}"
 
   #User Service
   user-service:
