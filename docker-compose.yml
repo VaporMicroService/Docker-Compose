@@ -16,8 +16,6 @@ services:
   user-service:
     image: shial/user-service:0.0.4
     restart: unless-stopped
-    ports:
-      - 81:81
     environment:
       PSQL_DATABASE_URL: ${PSQL_DATABASE_URL}
       FACEBOOK_APP_SECRET: ${FACEBOOK_APP_SECRET}
