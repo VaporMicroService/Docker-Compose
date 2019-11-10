@@ -14,7 +14,7 @@ services:
 
   #User Service
   user-service:
-    image: shial/user-service:0.0.4
+    image: shial/user-service:0.0.6
     restart: unless-stopped
     environment:
       PSQL_DATABASE_URL: ${PSQL_DATABASE_URL}
