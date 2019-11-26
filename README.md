@@ -25,3 +25,11 @@ docker build -t user-service:0.0.1 --build-arg env=release -f Dockerfile.Dockerf
 docker tag {IMAGE ID} shial/user-service:0.0.7
 docker push shial/user-service:0.0.7
 ```
+
+## Clean up these dangling images.
+
+Docker doesn’t have an automatic garbage collection system as of now. That would definitely be a nice feature to have. For now this command can be used to do a manual garbage collection.
+
+```
+docker rmi $(docker images -f "dangling=true" -q)
+```
