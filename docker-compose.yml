@@ -4,7 +4,7 @@ services:
 
   #API Gateway
   api-gateway:
-    image: shial/api-gateway:0.0.6
+    image: shial/api-gateway:0.0.5
     restart: unless-stopped
     ports:
       - 80:3000
@@ -24,7 +24,7 @@ services:
   
   #Profile Service
   profile-service:
-    image: shial/profile-service:0.0.1
+    image: shial/profile-service:0.0.2
     restart: unless-stopped
     environment:
       PSQL_DATABASE_URL: ${PSQL_PROFILE_DATABASE_URL}
