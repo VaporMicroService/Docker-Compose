@@ -24,7 +24,7 @@ services:
   
   #Profile Service
   profile-service:
-    image: shial/profile-service:0.0.3
+    image: shial/profile-service:0.0.4
     restart: unless-stopped
     environment:
       PSQL_DATABASE_URL: ${PSQL_PROFILE_DATABASE_URL}
