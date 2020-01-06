@@ -12,7 +12,7 @@ services:
       AUTH: http://auth-service:3001/users/id
       HOST_users: "{\"host\":\"http://auth-service:3001/\",\"loginRequired\":false}"
       HOST_profiles: "{\"host\":\"http://profile-service:3002/\",\"loginRequired\":true}"
-      HOST_products: "{\"host\":\"http://product-service:3003/\",\"loginRequired\":true}"
+      HOST_festivals: "{\"host\":\"http://product-service:3003/\",\"loginRequired\":true}"
 
   #Auth Service
   auth-service:
@@ -30,9 +30,9 @@ services:
     environment:
       PSQL_DATABASE_URL: ${PSQL_PROFILE_DATABASE_URL}
 
-  #Product Service
+  #Festivals Service
   profile-service:
-    image: shial/product-service:0.0.1
+    image: shial/product-service:0.0.2
     restart: unless-stopped
     environment:
       PSQL_DATABASE_URL: ${PSQL_PRODUCT_DATABASE_URL}
