@@ -32,7 +32,7 @@ services:
 
   #Festivals Service
   product-service:
-    image: shial/product-service:0.0.3
+    image: shial/product-service:0.0.4
     restart: unless-stopped
     environment:
       PSQL_DATABASE_URL: ${PSQL_PRODUCT_DATABASE_URL}
