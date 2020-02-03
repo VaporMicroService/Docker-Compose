@@ -4,7 +4,7 @@ services:
 
   #API Gateway
   api-gateway:
-    image: shial/api-gateway:0.0.8
+    image: shial/api-gateway:0.0.9
     restart: unless-stopped
     ports:
       - 80:3000
@@ -32,7 +32,7 @@ services:
 
   #Festivals Service
   product-service:
-    image: shial/product-service:0.0.4
+    image: shial/product-service:0.0.5
     restart: unless-stopped
     environment:
       PSQL_DATABASE_URL: ${PSQL_PRODUCT_DATABASE_URL}
