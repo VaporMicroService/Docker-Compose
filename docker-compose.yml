@@ -4,7 +4,7 @@ services:
 
   #API Gateway
   api-gateway:
-    image: shial/api-gateway:0.0.9
+    image: shial/api-gateway:0.0.10
     restart: unless-stopped
     ports:
       - 80:3000
