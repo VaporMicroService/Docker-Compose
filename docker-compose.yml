@@ -16,7 +16,7 @@ services:
 
   #Auth Service
   auth-service:
-    image: shial/user-service:0.0.8
+    image: shial/user-service:0.0.9
     restart: unless-stopped
     environment:
       PSQL_DATABASE_URL: ${PSQL_DATABASE_URL}
@@ -32,7 +32,7 @@ services:
 
   #Festivals Service
   product-service:
-    image: shial/product-service:0.0.5
+    image: shial/product-service:0.0.6
     restart: unless-stopped
     environment:
       PSQL_DATABASE_URL: ${PSQL_PRODUCT_DATABASE_URL}
